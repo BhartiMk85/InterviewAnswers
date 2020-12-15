@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class csPalindromeCheck
+{
+	public:
+    
+    bool isPalindrome(const string& sData)
+    {
+    	int iLoop=0;
+        int sLen = sData.size();
+        cout<<"isPalindrome String:"<<sData<<"Len:"<<sLen<<"\n";
+        
+        for (iLoop = 0; iLoop <= sLen; iLoop++) {
+        	cout<<sData[iLoop]<<"="<<sData[sLen-1]<<"\n";
+            
+            if (toupper(sData[iLoop]) != toupper(sData[sLen-1])) {
+            	
+                return false;
+            }
+            sLen--;
+        }
+        return true;
+    }
+};
+
+
+int main() {
+  bool bCheck=false;
+  string sPalindrome;
+  csPalindromeCheck myObj; 
+  
+  //bCheck=myObj.isPalindrome("Step on no pets");
+  cout<<"Enter the Palindrome Check String:";
+  getline (cin, sPalindrome);
+  
+  bCheck=myObj.isPalindrome(sPalindrome);
+  cout<<"True:"<<true<<"\nFalse:"<<false;
+  cout<<"\nReturn value of isPalindrome:"<<bCheck<<"\n";
+  return 0;
+}
+
