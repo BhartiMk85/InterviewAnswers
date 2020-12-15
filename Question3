@@ -1,0 +1,12 @@
+select
+id,
+name,
+marks
+case
+    when marks > 90 THEN 'A+'
+    when marks > 70 THEN 'A'
+    when marks > 50 THEN 'B'
+    when marks >= 40 THEN 'C'
+    else 'Fail'
+end AS grade
+from students 
